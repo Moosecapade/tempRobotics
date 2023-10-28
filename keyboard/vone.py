@@ -1,11 +1,10 @@
-import board
-import digitalio
-import KMKMatrix
-from kmk.kmk_keyboard import KMKKeyboard
-from kmk.keys import KC
-from kmk.matrix import KMKMatrix
-from kmk.matrix import DiodeOrientation
-
+import board  # Importing the board module for hardware interface
+import digitalio  # Importing the digitalio module for digital input/output control
+import KMKMatrix  # Importing KMKMatrix for handling keyboard matrix
+from kmk.kmk_keyboard import KMKKeyboard  # Importing the KMKKeyboard class
+from kmk.keys import KC  # Importing keycodes (KC) for defining key mappings
+from kmk.matrix import KMKMatrix  # Importing KMKMatrix for defining matrix configuration
+from kmk.matrix import DiodeOrientation  # Importing DiodeOrientation for specifying diode orientation
 
 # Define your matrix configuration (2x4 matrix)
 matrix = KMKMatrix(
@@ -14,7 +13,7 @@ matrix = KMKMatrix(
     diode_orientation=DiodeOrientation.COLUMNS
 )
 
-keyboard = KMKKeyboard(matrix)
+keyboard = KMKKeyboard(matrix)  # Creating an instance of the KMKKeyboard with the defined matrix
 
 # Define key mappings to send the respective letter
 keyboard.keymap = {
@@ -29,4 +28,4 @@ keyboard.keymap = {
 }
 
 if __name__ == '__main__':
-    keyboard.go()
+    keyboard.go()  # Start the keyboard
